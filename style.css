@@ -1,12 +1,15 @@
 html {
   background-image: linear-gradient(#609, black);
   height: max-content;
+  min-height: 100vh;
+  padding: 30px;
   color: darkslategrey;
   font: 400 14px "Open Sans", Arial, sans-serif;
 }
 
 h1 {
   margin: 0;
+  padding-top: 10px;
   color: #609;
   font-weight: 400;
   font-style: italic;
@@ -28,17 +31,9 @@ h3 {
 }
 h5 { margin-bottom: 0; }
 
-.page-content { padding: 30px 30px; }
-
 p.mail {
   margin-top: -12px;
   font-size: 12px;
-}
-
-div.header {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  text-align: center;
 }
 
 a { text-decoration: none; }
@@ -54,34 +49,44 @@ ul {
 }
 li { list-style-type: none; }
 
-.section {
-  float:left;
-  width: 30%;
-  margin-left: 3%;
-}
 .wrapper {
-  height: -webkit-calc(700px - (30px));
-  margin-left: auto;
-  margin-right: auto;
   background-color: white;
-  border-radius: 5px;
-  padding: 15px;
-  max-width: -webkit-calc(800px - (30px * 2));
-  max-width: calc(800px - (30px * 2));
+  margin-left: 20%;
+  margin-right: 20%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
+.header {
+  margin-top: 30px;
+  text-align: center;
+  flex-basis: 100%;
+}
+.sections {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.section {
+  flex-basis: 25%;
+  padding: 3%;
+}
+
 @media only screen and (max-width: 800px) {
-  .page-content {
+  html {
     padding: 0;
     padding-top: 30px;
     padding-bottom: 30px;
-    width: 100%;
   }
   .wrapper {
-    height: -webkit-calc(100vh + (70px));
-    padding: 0;
-    padding-top: 5px;
+    background-color: white;
     margin: 0;
-    width: 100%;
+  }
+  .sections {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
   }
   .section {
     width: 90%;
